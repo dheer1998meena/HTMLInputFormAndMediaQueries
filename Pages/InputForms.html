@@ -49,7 +49,7 @@
       <div>
           <label for="salary">Choose your salary:</label>
           <input type="range" id="salary" name="salary" min="30000" max="50000" step="100" value="40000">
-          <output class="salary-output" for="salary" >40000</output>
+          <output class="salary-output" for="salary" >45000</output>
       </div>
       <div>
           <button>Submit</button>
@@ -62,7 +62,7 @@
         salary.addEventListener('input',function(){
             salaryOutput.textContent=salary.value;
         });
-        ///UC1 Name validation
+        ///UC1 Name validation.
         const text=document.querySelector('#text');
         const textError=document.querySelector('.text-error');
         text.addEventListener('input',function()
@@ -73,7 +73,7 @@
             else 
             textError.textContent="Incorrect name";
         });
-        ///UC2 Email Validation
+        ///UC2 Email Validation.
         const emailInput = document.querySelector("#email");
         const errorEmail = document.querySelector(".email-error");
         emailInput.addEventListener('input', function ()
@@ -84,7 +84,7 @@
             else
                errorEmail.textContent = "Invalid email"
           });
-        ///UC3 Mobile Number Validation
+        ///UC3 Mobile Number Validation.
         const mobileInput = document.querySelector("#tel");
         const errorMobile = document.querySelector(".tel-error");
         mobileInput.addEventListener('input', function ()
@@ -95,12 +95,12 @@
             else
                 errorMobile.textContent = "Invalid mobile number"
           });
-          ///UC4 Password Validation
+          ///UC4,UC5 Password Validation.
           const password = document.querySelector("#pwd");
           const errorPwd = document.querySelector(".pwd-error");
           password.addEventListener('input', function () 
           {
-            let pwdRegex = RegExp("^.{8,}$");
+            let pwdRegex = RegExp("^(?=.*[A-Z])(?=.*[0-9])(?=.*[^0-9a-zA-Z])(?!.*[^0-9a-zA-Z].*[^0-9a-zA-Z]).{8,}$");
               if (pwdRegex.test(password.value))
                   errorPwd.textContent = "";
               else
